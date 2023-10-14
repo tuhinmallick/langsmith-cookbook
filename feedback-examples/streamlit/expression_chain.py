@@ -28,8 +28,7 @@ def get_expression_chain(
         ]
     )
     llm = ChatOpenAI(temperature=0.7)
-    chain = ingress | prompt | llm
-    return chain
+    return ingress | prompt | llm
 
 
 if __name__ == "__main__":
