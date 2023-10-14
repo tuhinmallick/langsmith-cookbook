@@ -58,8 +58,7 @@ def _run_notebook(filename, api_key, endpoint, project, hub_api_key, hub_api_url
                 )
     ep = ExecutePreprocessor(timeout=1000, allow_errors=False)
 
-    nb_out = ep.preprocess(nb_in)
-    return nb_out
+    return ep.preprocess(nb_in)
 
 
 @contextlib.contextmanager

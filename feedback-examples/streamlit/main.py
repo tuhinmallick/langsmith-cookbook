@@ -74,7 +74,7 @@ if prompt := st.chat_input(placeholder="Ask me a question!"):
         with collect_runs() as cb:
             for chunk in chain.stream(input_dict, config={"tags": ["Streamlit Chat"]}):
                 full_response += chunk.content
-                message_placeholder.markdown(full_response + "▌")
+                message_placeholder.markdown(f"{full_response}▌")
             memory.save_context(input_dict, {"output": full_response})
             st.session_state.run_id = cb.traced_runs[0].id
         message_placeholder.markdown(full_response)

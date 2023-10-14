@@ -19,8 +19,7 @@ def get_llm_chain(system_prompt: str, memory: ConversationBufferMemory) -> LLMCh
         ]
     ).partial(time=lambda: str(datetime.now()))
     llm = ChatOpenAI(temperature=0.7)
-    chain = LLMChain(prompt=prompt, llm=llm, memory=memory)
-    return chain
+    return LLMChain(prompt=prompt, llm=llm, memory=memory)
 
 
 if __name__ == "__main__":
